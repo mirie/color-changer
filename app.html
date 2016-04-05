@@ -28,16 +28,50 @@
 <body>
 
   <div>
+    <!-- Exercise 1 Button -->
     <button type="button" id="button">Change</button>
+    
+    <!-- Exercise 2 Buttons -->
+    <button type="button" id="button-red">Change to Red!</button>
+    <button type="button" id="button-yellow">Change to Yellow!</button>
+    
+    <!-- Exercise 3 Button -->
+    <button type="button" id="button-cycle">Cycle Colors</button>
+    
   </div>
   
   <script>
-    
+    // Exercise 1.
+    var colors = ["red", "yellow"];
     $("#button").on("click", function(){
-      
-      // $("body").css("background-color", colors[index]);
-      
+      $("body").css("background-color", colors[0]);
     });
+    
+    
+    // Exercise 2.
+    var colors = ["red", "yellow"];
+    $("#button-red").on("click", function(){
+      $("body").css("background-color", colors[0]);
+    });
+    
+    $("#button-yellow").on("click", function(){
+      $("body").css("background-color", colors[1]);
+    });
+    
+    // Exercise 3.
+    var colors = ["red", "yellow", "green", "pink", "gray", "blue"];
+    var counter = 0;
+    $("#button-cycle").on("click", function(){ 
+      if (counter >= colors.length) {
+        // Reset counter.
+        counter = 0;
+      }
+      
+      $("body").css("background-color", colors[counter]);
+      counter = counter + 1;
+    });
+    
+    
   </script>
 
 </body>
